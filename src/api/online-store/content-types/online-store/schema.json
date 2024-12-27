@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "online_stores",
+  "info": {
+    "singularName": "online-store",
+    "pluralName": "online-stores",
+    "displayName": "OnlineStore"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "logoWidth": {
+      "type": "string",
+      "maxLength": 20,
+      "required": true,
+      "default": "200px"
+    },
+    "logoAspect": {
+      "type": "string",
+      "default": "2.48",
+      "maxLength": 10,
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
