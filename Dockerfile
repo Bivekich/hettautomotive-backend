@@ -2,15 +2,18 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Копируем package.json и package-lock.json
-COPY package*.json ./
+# Создаем пользователя node
+USER node
 
-# Устанавливаем зависимости и strapi глобально
-RUN npm install
-RUN npm install -g @strapi/strapi
+# Копируем package.json и package-lock.json
+COPY --chown=node:node package*.json ./
+
+# Устанавливаем зависимости
+RUN npm install && \
+    npm install react react-dom react-router-dom styled-components
 
 # Копируем исходный код
-COPY . .
+COPY --chown=node:node . .
 
 EXPOSE 1337
 
