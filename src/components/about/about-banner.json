@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_about_banners",
+  "info": {
+    "displayName": "About Banner",
+    "description": "Banner configuration for About pages"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "The main title of the banner"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true,
+      "description": "The subtitle text displayed above the title"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"],
+      "description": "Background image for the banner"
+    }
+  }
+}

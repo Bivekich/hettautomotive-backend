@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modifications",
+  "info": {
+    "singularName": "modification",
+    "pluralName": "modifications",
+    "displayName": "Modifications",
+    "description": "Car modifications for products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::model.model",
+      "inversedBy": "modifications"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catalog-product.catalog-product",
+      "mappedBy": "modification"
+    }
+  }
+}

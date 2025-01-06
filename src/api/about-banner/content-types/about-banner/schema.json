@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_banners",
+  "info": {
+    "singularName": "about-banner",
+    "pluralName": "about-banners",
+    "displayName": "About Banners",
+    "description": "Manage banner texts for different pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "description": "The page this banner appears on (e.g., 'about', 'products', 'contacts')"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "The main title of the banner"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true,
+      "description": "The subtitle text displayed above the title"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_documents",
+  "info": {
+    "displayName": "Document",
+    "description": "Product related documents"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["manual", "datasheet", "certificate", "other"],
+      "required": true
+    }
+  }
+}

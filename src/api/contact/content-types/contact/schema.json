@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "ContactPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "ogrn": {
+      "type": "string",
+      "required": true
+    },
+    "inn": {
+      "type": "string",
+      "required": true
+    },
+    "contactDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-detail",
+      "required": true
+    },
+    "mapUrl": {
+      "type": "string",
+      "required": true
+    },
+    "formTitle": {
+      "type": "string",
+      "required": true
+    },
+    "formDescription": {
+      "type": "string",
+      "required": true
+    },
+    "formEmail": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

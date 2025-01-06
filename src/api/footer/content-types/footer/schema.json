@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "phoneLabel": {
+      "type": "string",
+      "required": true
+    },
+    "headerPhone": {
+      "type": "string",
+      "required": true,
+      "description": "Phone number displayed in the header next to messenger icons"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "emailLabel": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "addressLabel": {
+      "type": "string",
+      "required": true
+    },
+    "addressMapLink": {
+      "type": "string",
+      "required": true
+    },
+    "copyright": {
+      "type": "string",
+      "required": true
+    },
+    "termsOfUse": {
+      "type": "string",
+      "required": true
+    },
+    "termsOfUseLink": {
+      "type": "string",
+      "required": true
+    },
+    "privacyPolicy": {
+      "type": "string",
+      "required": true
+    },
+    "privacyPolicyLink": {
+      "type": "string",
+      "required": true
+    },
+    "telegramLink": {
+      "type": "string",
+      "required": true
+    },
+    "whatsappLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

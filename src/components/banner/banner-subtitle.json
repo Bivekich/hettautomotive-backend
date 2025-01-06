@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_banner_banner_subtitles",
+  "info": {
+    "displayName": "Banner Subtitle",
+    "description": "Configurable subtitle for banner slides"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true,
+      "description": "The subtitle text to display"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": ["neutral", "white", "green", "black"],
+      "default": "neutral",
+      "required": true,
+      "description": "The color of the subtitle text"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large"],
+      "default": "medium",
+      "required": true,
+      "description": "The size of the subtitle text"
+    },
+    "weight": {
+      "type": "enumeration",
+      "enum": ["normal", "medium", "semibold", "bold"],
+      "default": "bold",
+      "required": true,
+      "description": "The font weight of the subtitle text"
+    },
+    "animation": {
+      "type": "enumeration",
+      "enum": ["none", "fade", "slide", "scale"],
+      "default": "fade",
+      "required": true,
+      "description": "The animation style for the subtitle"
+    },
+    "animationDelay": {
+      "type": "decimal",
+      "default": 0.2,
+      "min": 0,
+      "max": 2,
+      "required": true,
+      "description": "The delay before the animation starts (in seconds)"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "models",
+  "info": {
+    "singularName": "model",
+    "pluralName": "models",
+    "displayName": "Models",
+    "description": "Car models for products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "models"
+    },
+    "modifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::modification.modification",
+      "mappedBy": "model"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catalog-product.catalog-product",
+      "mappedBy": "model"
+    }
+  }
+}

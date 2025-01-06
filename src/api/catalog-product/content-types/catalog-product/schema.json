@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catalog_products",
+  "info": {
+    "singularName": "catalog-product",
+    "pluralName": "catalog-products",
+    "displayName": "Catalog Products",
+    "description": "Products displayed in the main catalog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "articleNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-category.product-category",
+      "inversedBy": "catalogProducts"
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.specification",
+      "required": true,
+      "min": 1,
+      "description": "Brief specifications shown in the catalog card"
+    },
+    "detailedSpecifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.specification",
+      "required": true,
+      "min": 1,
+      "description": "Detailed specifications shown in the product info page"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "products"
+    },
+    "model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::model.model",
+      "inversedBy": "products"
+    },
+    "modification": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modification.modification",
+      "inversedBy": "products"
+    },
+    "whereToBuyLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "geography",
     "pluralName": "geographies",
-    "displayName": "Geography"
+    "displayName": "Geography",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,17 +22,20 @@
       "required": true
     },
     "map": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "buttonText": {
       "type": "string",
       "required": true,
       "maxLength": 50
+    },
+    "Link": {
+      "type": "string"
     }
   }
 }
