@@ -2,22 +2,18 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Создаем и настраиваем пользователя node
 RUN chown -R node:node /app
-
 USER node
 
-# Копируем package.json и package-lock.json
 COPY --chown=node:node package*.json ./
+RUN npm install
 
-# Устанавливаем зависимости
-RUN npm install && \
-    npm install react react-dom react-router-dom styled-components
-
-# Копируем исходный код
 COPY --chown=node:node . .
+
+RUN npm run build
+RUN npm run strapi build
 
 EXPOSE 1337
 
-# Запускаем в dev режиме
-CMD ["npm", "run", "develop"]
+ENV NODE_ENV=production
+CMD ["npm", "run", "start"]
