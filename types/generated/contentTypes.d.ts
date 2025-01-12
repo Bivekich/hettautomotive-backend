@@ -763,7 +763,7 @@ export interface ApiGeographyGeography extends Struct.SingleTypeSchema {
       'api::geography.geography'
     > &
       Schema.Attribute.Private;
-    map: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    maps: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
