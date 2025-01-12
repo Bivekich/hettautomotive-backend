@@ -413,14 +413,14 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    additionalText: Schema.Attribute.Text & Schema.Attribute.Required;
+    additionalText: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
-    mainText: Schema.Attribute.Text & Schema.Attribute.Required;
+    mainText: Schema.Attribute.RichText & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -763,7 +763,7 @@ export interface ApiGeographyGeography extends Struct.SingleTypeSchema {
       'api::geography.geography'
     > &
       Schema.Attribute.Private;
-    map: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    maps: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -852,7 +852,7 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
   collectionName: 'news_items';
   info: {
     description: 'News articles and updates';
-    displayName: 'News Items';
+    displayName: 'News ';
     pluralName: 'news-items';
     singularName: 'news-item';
   };
