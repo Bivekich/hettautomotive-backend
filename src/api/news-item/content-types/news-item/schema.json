@@ -4,12 +4,13 @@
   "info": {
     "singularName": "news-item",
     "pluralName": "news-items",
-    "displayName": "News Items",
+    "displayName": "News ",
     "description": "News articles and updates"
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
@@ -31,7 +32,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "slug": {
       "type": "uid",
