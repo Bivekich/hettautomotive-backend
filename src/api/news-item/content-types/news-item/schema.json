@@ -32,14 +32,16 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "slug": {
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo"
     }
   }
 }

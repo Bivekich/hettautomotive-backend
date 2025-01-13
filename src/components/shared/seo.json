@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": "Search Engine Optimization metadata"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160
+    },
+    "metaRobots": {
+      "type": "string",
+      "regex": "^(index|noindex),(follow|nofollow)$",
+      "default": "index,follow"
+    },
+    "structuredData": {
+      "type": "json"
+    },
+    "metaViewport": {
+      "type": "string",
+      "default": "width=device-width, initial-scale=1"
+    },
+    "canonicalURL": {
+      "type": "string",
+      "regex": "^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"
+    },
+    "metaImage": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "keywords": {
+      "type": "text",
+      "regex": "^[^,]+(,[^,]+)*$",
+      "description": "Comma-separated keywords"
+    }
+  }
+}

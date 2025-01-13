@@ -77,6 +77,10 @@
     "whereToBuyLink": {
       "type": "string",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo"
     }
   }
 }
