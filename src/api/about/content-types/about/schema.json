@@ -23,6 +23,10 @@
     "additionalText": {
       "type": "richtext",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo"
     }
   }
 }
