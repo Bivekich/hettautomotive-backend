@@ -66,6 +66,29 @@ export interface ContactContactDetail extends Struct.ComponentSchema {
   };
 }
 
+export interface GeographySlide extends Struct.ComponentSchema {
+  collectionName: 'components_geography_slides';
+  info: {
+    description: 'A slide in the geography section containing a map and content';
+    displayName: 'Geography Slide';
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    map: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+  };
+}
+
 export interface ProductDocument extends Struct.ComponentSchema {
   collectionName: 'components_product_documents';
   info: {
@@ -141,6 +164,7 @@ declare module '@strapi/strapi' {
       'about.about-banner': AboutAboutBanner;
       'banner.banner-subtitle': BannerBannerSubtitle;
       'contact.contact-detail': ContactContactDetail;
+      'geography.slide': GeographySlide;
       'product.document': ProductDocument;
       'product.feature': ProductFeature;
       'product.specification': ProductSpecification;

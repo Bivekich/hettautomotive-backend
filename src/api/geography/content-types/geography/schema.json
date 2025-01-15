@@ -12,28 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "geography.slide",
       "required": true,
-      "maxLength": 255
-    },
-    "description": {
-      "type": "text",
-      "required": true
-    },
-    "maps": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": ["images"]
-    },
-    "buttonText": {
-      "type": "string",
-      "required": true,
-      "maxLength": 50
-    },
-    "Link": {
-      "type": "string"
+      "min": 1
     }
   }
 }
