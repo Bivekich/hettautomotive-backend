@@ -40,6 +40,12 @@
       "target": "api::product-category.product-category",
       "inversedBy": "catalogProducts"
     },
+    "subcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subcategory.subcategory",
+      "inversedBy": "catalogProducts"
+    },
     "specifications": {
       "type": "component",
       "repeatable": true,

@@ -26,6 +26,13 @@
       "type": "string",
       "required": true,
       "description": "The subtitle text displayed above the title"
+    },
+    "banner": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "description": "The banner image for this page"
     }
   }
 }

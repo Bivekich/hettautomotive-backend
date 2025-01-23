@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "product_categories",
+  "collectionName": "subcategories",
   "info": {
-    "singularName": "product-category",
-    "pluralName": "product-categories",
-    "displayName": "Product Categories",
-    "description": "Main categories of automotive products"
+    "singularName": "subcategory",
+    "pluralName": "subcategories",
+    "displayName": "Product Subcategories",
+    "description": "Subcategories for main product categories"
   },
   "options": {
     "draftAndPublish": true
@@ -29,17 +29,18 @@
     "description": {
       "type": "text"
     },
-    "subcategories": {
+    "parent_category": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::subcategory.subcategory",
-      "mappedBy": "parent_category"
+      "relation": "manyToOne",
+      "target": "api::product-category.product-category",
+      "inversedBy": "subcategories",
+      "required": true
     },
     "catalogProducts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::catalog-product.catalog-product",
-      "mappedBy": "category"
+      "mappedBy": "subcategory"
     },
     "seo": {
       "type": "component",
