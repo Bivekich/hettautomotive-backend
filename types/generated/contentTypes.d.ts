@@ -560,7 +560,7 @@ export interface ApiCatalogProductCatalogProduct
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     detailedSpecifications: Schema.Attribute.Component<
       'product.specification',
       true
@@ -693,6 +693,40 @@ export interface ApiCurrentEventCurrentEvent
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCustomPageCustomPage extends Struct.CollectionTypeSchema {
+  collectionName: 'custom_pages';
+  info: {
+    description: 'Create custom pages with flexible content and custom URLs';
+    displayName: 'Custom Page';
+    pluralName: 'custom-pages';
+    singularName: 'custom-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    coverImage: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::custom-page.custom-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1613,6 +1647,7 @@ declare module '@strapi/strapi' {
       'api::catalog-product.catalog-product': ApiCatalogProductCatalogProduct;
       'api::contact.contact': ApiContactContact;
       'api::current-event.current-event': ApiCurrentEventCurrentEvent;
+      'api::custom-page.custom-page': ApiCustomPageCustomPage;
       'api::footer.footer': ApiFooterFooter;
       'api::geography.geography': ApiGeographyGeography;
       'api::model.model': ApiModelModel;

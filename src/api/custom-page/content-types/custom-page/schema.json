@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_pages",
+  "info": {
+    "singularName": "custom-page",
+    "pluralName": "custom-pages",
+    "displayName": "Custom Page",
+    "description": "Create custom pages with flexible content and custom URLs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
